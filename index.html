@@ -1,37 +1,121 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Blog zal z sp : " />
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Blog zal z sp by Zwiedzacz</title>
+    <title>Blog zal z sp</title>
   </head>
 
   <body>
 
-    <header>
-      <div class="container">
-        <h1>Blog zal z sp</h1>
-        <h2></h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Zwiedzacz/Blog_zal_z_SP">View on GitHub</a>
 
-        <section id="downloads">
-          <a href="https://github.com/Zwiedzacz/Blog_zal_z_SP/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/Zwiedzacz/Blog_zal_z_SP/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/Zwiedzacz/Blog_zal_z_SP" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+          <h1 id="project_title">Blog zal z sp</h1>
+          <h2 id="project_tagline"></h2>
 
-    <div class="container">
-      <section id="main_content">
-        <p>Tu powstanie BLOG </p>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Zwiedzacz/Blog_zal_z_SP/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Zwiedzacz/Blog_zal_z_SP/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="blog-pawe%C5%82-radski" class="anchor" href="#blog-pawe%C5%82-radski"><span class="octicon octicon-link"></span></a>Blog Paweł Radski</h1>
+
+<h3>
+<a name="jestem-studentem-ug-na-kierunku-informatyka" class="anchor" href="#jestem-studentem-ug-na-kierunku-informatyka"><span class="octicon octicon-link"></span></a>Jestem studentem UG na kierunku informatyka</h3>
+
+<p>oto parę moich skryptów i programów:
+skrypt kopiujący wszystkie pliki w danym katalogu dodający rozszerzenie .old omijający nasz skrypt</p>
+
+<pre><code>#!/bin/bash
+for nazwa in `ls`                                                    
+do 
+if [ $nazwa != `basename $0` ]
+cp $nazwa $nazwa.old 
+done
+exit 0
+</code></pre>
+
+<p>sortowanie bąbelkowe w C</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+
+#define M 5
+void funkcja(int tab[M]){
+int i, j, temp;
+    for (i = 0; i&lt;M; i++)
+    {
+            for (j=0; j&lt;M-1-i; j++)
+            {
+                    if (tab[j] &lt; tab[j+1])
+                    {
+                            temp = tab[j+1];
+                            tab[j+1] = tab[j];
+                            tab[j] = temp;
+                    }
+            }
+    }
+}
+int main()
+{
+int tab[M];
+int i;
+for(i=0; i&lt; M; i=i+1){
+      tab[i]=0;
+}    
+printf("podaj 5 liczb naturalnych\n");
+for(i=0; i&lt; M; i=i+1){
+      scanf("%d",&amp;tab[i]);
+}   
+funkcja(tab);
+printf("teraz tablica wyglÄ…da tak:\n");
+for(i=0; i&lt; M; i=i+1){
+      printf("%d\n",tab[i]);
+}    
+return 0;
+}
+</code></pre>
+
+<p>jedno z zadań ze sprawdzianu</p>
+
+<pre><code>#!/bin/bash
+# Paweł Radski 224607
+if [ -e $1 -a -e $2 -a -e $3 ]
+then
+cat $1&gt;&gt;$3
+cat $2&gt;&gt;$3
+fi
+exit 0
+</code></pre>
+
+<h2>
+<a name="link-do-pobrania-pliku-latex" class="anchor" href="#link-do-pobrania-pliku-latex"><span class="octicon octicon-link"></span></a>Link do pobrania pliku <a href="https://drive.google.com/file/d/0BybF8mo2cmEcNFhzSk9lMlQtSU0/edit?usp=sharing">LateX</a>
+</h2>
       </section>
     </div>
 
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Blog zal z sp maintained by <a href="https://github.com/Zwiedzacz">Zwiedzacz</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
     
+
   </body>
 </html>
